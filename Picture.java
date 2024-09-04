@@ -1,13 +1,8 @@
 /**
- * This class represents a simple picture. You can draw the picture using
- * the draw method. But wait, there's more: being an electronic picture, it
- * can be changed. You can set it to black-and-white display and back to
- * colors (only after it's been drawn, of course).
- *
- * This class was written as an early example for teaching Java with BlueJ.
+ * This class shows a person approaching their home while the sun is hitting their home 
  * 
- * @author  Michael Kšlling and David J. Barnes
- * @version 2016.02.29
+ * @author  Leslie Acevedo
+ * @version 2024.09.03
  */
 public class Picture
 {
@@ -16,7 +11,8 @@ public class Picture
     private Triangle roof;
     private Circle sun;
     private boolean drawn;
-
+    private Person person;
+    private Circle doornob;
     /**
      * Constructor for objects of class Picture
      */
@@ -27,6 +23,8 @@ public class Picture
         roof = new Triangle();  
         sun = new Circle();
         drawn = false;
+        person = new Person();
+        doornob = new Circle();
     }
 
     /**
@@ -56,6 +54,17 @@ public class Picture
             sun.moveVertical(-40);
             sun.changeSize(80);
             sun.makeVisible();
+            
+            person.moveHorizontal(100);
+            person.moveVertical(20);
+            person.makeVisible();
+            person.changeColor("magenta");
+            
+            doornob.changeSize(15);
+            doornob.moveHorizontal(37);
+            doornob.moveVertical(110);
+            doornob.makeVisible();
+            
             drawn = true;
         }
     }
@@ -69,6 +78,8 @@ public class Picture
         window.changeColor("white");
         roof.changeColor("black");
         sun.changeColor("black");
+        person.changeColor("black");
+        doornob.changeColor("white");
     }
 
     /**
@@ -80,5 +91,7 @@ public class Picture
         window.changeColor("black");
         roof.changeColor("green");
         sun.changeColor("yellow");
+        doornob.changeColor("blue");
+        
     }
 }
